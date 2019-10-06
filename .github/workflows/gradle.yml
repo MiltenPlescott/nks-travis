@@ -24,6 +24,6 @@ jobs:
       run: ./gradlew build
 
     - name: Run app
+      run: ./gradlew run
       env: 
         alphabet: ${{ alphabet }}
-      run: ./gradlew run
