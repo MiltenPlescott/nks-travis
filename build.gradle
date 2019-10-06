@@ -13,13 +13,13 @@ plugins {
     // Apply the application plugin to add support for building a CLI application
     id 'application'
 
-    id 'jacoco'
-
-    id 'pmd'
-
-    id 'com.github.spotbugs' version '2.0.0'
-
-    id 'net.ltgt.errorprone' version '0.8.1'
+	//	id 'jacoco'
+	//
+	//	id 'pmd'
+	//
+	//	id 'com.github.spotbugs' version '2.0.0'
+	//
+	//	id 'net.ltgt.errorprone' version '0.8.1'
 }
 
 repositories {
@@ -36,10 +36,10 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 
-    errorprone 'com.google.errorprone:error_prone_core:2.3.3'
+	//	errorprone 'com.google.errorprone:error_prone_core:2.3.3'
 
     // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on
-    compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.62'
+	//    compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.62'
 
 	compile group: 'commons-codec', name: 'commons-codec', version: '1.13'
 
@@ -62,39 +62,39 @@ tasks.withType (JavaCompile) {
     //options.compilerArgs << "-Xlint:unchecked"
 }
 
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        html.enabled true
-        csv.enabled false
-    }
-}
-
-pmd {
-    ignoreFailures = true
-    ruleSets = [
-			'java-basic',
-			'java-imports',
-			'java-naming',
-    ]
-}
-
-tasks.withType(Pmd){
-    reports{
-        xml.enabled false
-        html.enabled true
-    }
-}
-
-spotbugs {
-    toolVersion = '3.1.12'
-}
-
-tasks.withType(com.github.spotbugs.SpotBugsTask) {
-    reports {
-        html.enabled = true
-        xml.enabled = false
-        html.stylesheet resources.text.fromFile('config/xsl/fancy.xsl')
-        //html.stylesheet resources.text.fromFile('config/xsl/summary.xsl')
-    }
-}
+//jacocoTestReport {
+//    reports {
+//        xml.enabled true
+//        html.enabled true
+//        csv.enabled false
+//    }
+//}
+//
+//pmd {
+//    ignoreFailures = true
+//    ruleSets = [
+//			'java-basic',
+//			'java-imports',
+//			'java-naming',
+//    ]
+//}
+//
+//tasks.withType(Pmd){
+//    reports{
+//        xml.enabled false
+//        html.enabled true
+//    }
+//}
+//
+//spotbugs {
+//    toolVersion = '3.1.12'
+//}
+//
+//tasks.withType(com.github.spotbugs.SpotBugsTask) {
+//    reports {
+//        html.enabled = true
+//        xml.enabled = false
+//        html.stylesheet resources.text.fromFile('config/xsl/fancy.xsl')
+//        //html.stylesheet resources.text.fromFile('config/xsl/summary.xsl')
+//    }
+//}

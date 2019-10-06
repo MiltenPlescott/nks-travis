@@ -1,4 +1,4 @@
-name: Java CI
+name: Brute Force
 
 on: [push]
 
@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        alphabet: [1, 2, 3]
+        alphabet: [0, 3, 6, 9]
+        # alphabet: [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51]
 
     steps:
     - uses: actions/checkout@v1
@@ -24,6 +25,6 @@ jobs:
       run: ./gradlew build
 
     - name: Run app
-      run: ./gradlew run
+      run: ./gradlew run --args="3 ${{ matrix.alphabet }}"
       env: 
         alphabet: ${{ matrix.alphabet }}
