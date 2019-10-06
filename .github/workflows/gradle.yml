@@ -6,6 +6,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        alphabet: [1, 2, 3]
 
     steps:
     - uses: actions/checkout@v1
@@ -21,4 +24,6 @@ jobs:
       run: ./gradlew build
 
     - name: Run app
+      env: 
+        alphabet: ${{ alphabet }}
       run: ./gradlew run
