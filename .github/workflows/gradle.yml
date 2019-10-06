@@ -26,4 +26,4 @@ jobs:
     - name: Run app
       run: ./gradlew run
       env: 
-        alphabet: ${{ alphabet }}
+        alphabet: ${{ matrix.alphabet }}
