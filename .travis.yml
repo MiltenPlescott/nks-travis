@@ -19,4 +19,4 @@ before_install:
 script:
   - ./gradlew build
 after_success:
-  - ./gradlew run --args="5 $ALPHABET"
+  - travis_wait 60 ./gradlew run --args="5 $ALPHABET"
