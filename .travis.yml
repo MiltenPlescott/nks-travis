@@ -7,16 +7,16 @@ env:
   - ALPHABET=5
   - ALPHABET=10
   - ALPHABET=15
-  # - ALPHABET=20
-  # - ALPHABET=25
-  # - ALPHABET=30
-  # - ALPHABET=35
-  # - ALPHABET=40
-  # - ALPHABET=45
-  # - ALPHABET=50
+  - ALPHABET=20
+  - ALPHABET=25
+  - ALPHABET=30
+  - ALPHABET=35
+  - ALPHABET=40
+  - ALPHABET=45
+  - ALPHABET=50
 before_install:
   - chmod +x gradlew
 script:
   - ./gradlew build
 after_success:
-  - travis_wait 60 ./gradlew run --args="5 $ALPHABET"
+  - travis_wait 60 ./gradlew run --args="5 ${ALPHABET}"

@@ -37,7 +37,7 @@ public class PhaseOneOnline {
 	}
 
 	private static void verify() {
-		System.out.println("-------- CRACKED PASSWORDS -------");
+		System.out.println("-------- CRACKED PASSWORDS -------\n\n");
 		for (int leak = 0; leak < LEAK_SIZE; leak++) {
 			for (int cand = 0; cand < candidateSaltsBin.size(); cand++) {
 				if (Arrays.equals(realSaltsBin[leak], candidateSaltsBin.get(cand))) {
@@ -58,7 +58,7 @@ public class PhaseOneOnline {
 				}
 			}
 		}
-		System.out.println("-------------- END ---------------");
+		System.out.println("\n\n-------------- END ---------------");
 	}
 
 //	private static void generateLeakedDB() {

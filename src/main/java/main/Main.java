@@ -14,6 +14,11 @@ public class Main {
 	// travis: 5 chars at a time in 10 jobs, 2 last chars in 11th job
 	// locally/on school pc: don't do the whole thing at once (in case run time would be longer than an hour, but split it into 10-ish chars)
 	public static void main(String[] args) {
+		System.out.println("Main args: " + Arrays.toString(args));
+		if (args.length != 2) {
+			System.err.println("Main received " + args.length + " args, instead of required 2.");
+			System.exit(0);
+		}
 		long start = System.currentTimeMillis();
 		int charsInJob = Integer.parseInt(args[0], 10);
 		int from = Integer.parseInt(args[1], 10);
