@@ -4,19 +4,17 @@ jdk:
   - openjdk11
 env:
   - ALPHABET=0
-  - ALPHABET=5
-  - ALPHABET=10
-  - ALPHABET=15
-  - ALPHABET=20
-  - ALPHABET=25
+  - ALPHABET=6
+  - ALPHABET=12
+  - ALPHABET=13
+  - ALPHABET=24
   - ALPHABET=30
-  - ALPHABET=35
-  - ALPHABET=40
-  - ALPHABET=45
-  - ALPHABET=50
+  - ALPHABET=36
+  - ALPHABET=42
+  - ALPHABET=48
 before_install:
   - chmod +x gradlew
 script:
   - ./gradlew build
 after_success:
-  - travis_wait 60 ./gradlew run --args="5 ${ALPHABET}"
+  - travis_wait 60 ./gradlew run --args="6 ${ALPHABET}"
